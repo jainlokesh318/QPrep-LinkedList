@@ -233,10 +233,10 @@ if __name__ == '__main__':
 
     os.system('find . -name core.* | xargs rm || true')
 
-    config_path = 'crio/.git/config'
-    if not repo_exists('crio/.git/config', 'crio_ps_ds.git'):
-        os.system('mkdir -p crio && rm -rf crio/*')
-        os.system('git clone https://gitlab.crio.do/crio_libs/crio_ps_ds.git crio')
+    #config_path = 'crio/.git/config'
+    #if not repo_exists('crio/.git/config', 'crio_ps_ds.git'):
+    #    os.system('mkdir -p crio && rm -rf crio/*')
+    #    os.system('git clone https://gitlab.crio.do/crio_libs/crio_ps_ds.git crio')
     
     if args.test_all:
         all_problems = [dir for dir in os.listdir(os.getenv('PWD')) if dir[0] >= 'A' and dir[0] <= 'Z']
