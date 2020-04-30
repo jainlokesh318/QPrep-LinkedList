@@ -1,5 +1,6 @@
 Problem Description
-Write code to remove duplicates from an sorted linked list.
+Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+Return the linked list sorted as well.
 
 Input format:
 First line contains N, number of elements in the linked list.
@@ -9,7 +10,7 @@ Output format
 Print the linked list after removing duplicates.
 
 Constraints
-0 <= Number of nodes <= 105
+0 <= Number of nodes <= 10^5
 -10^9 <= ListNode.val <= 10^9
 
 Sample Input 1
@@ -17,10 +18,10 @@ Sample Input 1
 1 2 2 3 3
 
 Sample Output 1
-1 2 3
+1
 
 Explanation 1
-Node 2 and 3 have 2 occurrences each.
+Node 2 and 3 have 2 occurrences each. Node 1 is distinct
 
 Sample Input 2
 3
