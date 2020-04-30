@@ -14,5 +14,7 @@ public:
 };
 */
 
-bool isPalindrome(ListNode* head) {
+ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+
 }
+

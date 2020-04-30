@@ -1,10 +1,11 @@
-from crio.ds.List.ListNode import *
+from crio.ds.List.ListNode import ListNode
 
-def print_list(head):
-    while head != None:
-        print(head.val, end = " ")
-        head = head.next
-
-
+'''
+# Definition for ListNode
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+'''
 
 def sort_list(lst):

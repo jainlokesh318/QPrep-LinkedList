@@ -1,32 +1,43 @@
-#include <bits/stdc++.h>
-#include "FastIO.hpp"
-#include "ReadMatrix.hpp"
-#include "PrintMatrix.hpp"
-#include "ListNode.hpp"
-using namespace std;
+/*
+class ListNode {
+    public:
+	int val;
+	ListNode* next;
 
-class MergeTwoSortedLists {
-public:
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        ListNode* res = new ListNode(0);
-        ListNode* temp = res;
-        return temp->next;
-    }
+	ListNode() {}
+
+	ListNode(int x) {                      
+	    val = x;                       
+	    next = NULL;
+	}
 };
+*/
+#include <bits/stdc++.h>
+using namespace std;
+#include "Solution.cpp"
 
 int main() {
-	FastIO();
 	int m, n;
 	cin >> m;
-	vector<int> nums1, nums2;
-	ReadMatrix<int>().OneDMatrix(m, nums1);
-    cin >> n;
-	ReadMatrix<int>().OneDMatrix(n, nums2);
-	ListNode* l1 = ListNode().createList(nums1);
-    ListNode* l2 = ListNode().createList(nums2);
+	vector<int> nums1(m);
 
-    ListNode* resultHead = MergeTwoSortedLists().mergeTwoLists(l1, l2);
-    vector<int> result = ListNode().extractList(resultHead);
-    PrintMatrix<int>().OneDMatrix(result, " ");
+	for(int i = 0 ; i < m ; ++i) {
+            cin >> nums1[i];
+        }
+    	cin >> n;
+	vector<int> nums2(n);
+	for(int i = 0 ; i < n ; ++i) {
+            cin >> nums2[i];
+        }
+
+	ListNode* l1 = ListNode().createList(nums1);
+    	ListNode* l2 = ListNode().createList(nums2);
+
+    	ListNode* resultHead = mergeTwoLists(l1, l2);
+
+	vector<int> resultList = ListNode().extractList(resultHead);
+        for(int i = 0 ; i < resultList.size() ; ++i) {
+            cout << resultList[i] << " ";
+        }
 	return 0;
 }

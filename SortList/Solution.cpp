@@ -10,12 +10,8 @@
 
 class SortList {
   public:
-    // TODO: CRIO_TASK_MODULE_L1_PROBLEMS
-    // Your implementation goes here
-
     ListNode* sortList(ListNode* head) {
-        // TODO: CRIO_TASK_MODULE_L1_PROBLEMS
-        // Your implementation goes here
+
     }
 };
 

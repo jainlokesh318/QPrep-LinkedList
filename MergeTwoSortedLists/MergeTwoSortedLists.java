@@ -1,31 +1,38 @@
+/*
+public class ListNode {
+   public int val; 
+   public ListNode next;
+   public ListNode(int x) { val = x; next = null; }
+}
+*/
 import crio.ds.List.ListNode;
 import java.io.*;
 import java.util.*;
 
-public class MergeTwoSortedLists {
-    // Implement your solution by completing the below function
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-
-        return new ListNode(-1);
-    }
-
+class MergeTwoSortedLists {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        int[] firstList = new int[scanner.nextInt()];
-        for (int i = 0; i < firstList.length; ++i)
-            firstList[i] = scanner.nextInt();
-
-        int[] secondList = new int[scanner.nextInt()];
-        for (int i = 0; i < secondList.length; i++)
-            secondList[i] = scanner.nextInt();
+        int n = scanner.nextInt();
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        for(int i = 0 ; i < n ; ++i) {
+            int x = scanner.nextInt();
+            list1.add(x);
+        }
+        int m = scanner.nextInt();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        for(int i = 0 ; i < m ; ++i) {
+            int x = scanner.nextInt();
+            list2.add(x);
+        }
         scanner.close();
 
-        ListNode firstListHead = ListNode.arrayToListNode(firstList);
-        ListNode secondListHead = ListNode.arrayToListNode(secondList);
+        ListNode list1Head = ListNode.createList(list1);
+        ListNode list2Head = ListNode.createList(list2);
+        ListNode resultHead = new Solution().mergeTwoLists(list1Head, list2Head);
 
-        ListNode resultHead = new MergeTwoSortedLists().mergeTwoLists(firstListHead, secondListHead);
-        String mergedListString = ListNode.listNodeToString(resultHead);
-        System.out.print(mergedListString);
+        List<Integer> res = ListNode.extractList(resultHead);
+        for(int element: res) {
+            System.out.print(element + " ");
+        }
     }
 }

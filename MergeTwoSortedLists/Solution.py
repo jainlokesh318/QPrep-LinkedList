@@ -1,4 +1,4 @@
-from crio.ds.List.ListNode import ListNode
+from crio.ds.List.ListNode import *
 
 '''
 # Definition for ListNode
@@ -8,4 +8,5 @@ class ListNode:
         self.next = None
 '''
 
-def reverse_continuous_even_elements(head):
+def mergeTwoLists(l1, l2):
+

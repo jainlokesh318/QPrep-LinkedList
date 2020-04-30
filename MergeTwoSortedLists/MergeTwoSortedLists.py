@@ -1,21 +1,25 @@
-from crio.io import PrintMatrix
-from crio.ds.List import ListNode
+from Solution import *
+from crio.ds.List.ListNode import *
 
-def mergeTwoLists(l1, l2):
-    # TODO: CRIO_TASK_MODULE_L1_PROBLEMS
-    # Your implementation goes here
+def print_list(head):
+    while head != None:
+        print(head.val, end = " ")
+        head = head.next
 
-    return None
+def main():
+    m = int(input().strip())
+    nums1 = input().strip().split()
+    nums1 = [int(x) for x in nums1]
+
+    n = int(input().strip())
+    nums2 = input().strip().split()
+    nums2 = [int(x) for x in nums2]
+
+    l1 = createList(nums1)
+    l2 = createList(nums2)
+    result = mergeTwoLists(l1, l2)
+    print_list(result)
 
 if __name__ == '__main__':
-    m = int(input())
-    nums1 = input().split()
-    nums1 = [int(i) for i in nums1]
-    n = int(input())
-    nums2 = input().split()
-    nums2 = [int(i) for i in nums2]
-    l1 = ListNode.createList(nums1)
-    l2 = ListNode.createList(nums2)
-    resultHead = mergeTwoLists(l1, l2)
-    result = ListNode.extractList(resultHead)
-    PrintMatrix.OneDMatrix(result, " ")
+    main()
+

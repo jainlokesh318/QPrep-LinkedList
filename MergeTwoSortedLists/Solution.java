@@ -11,11 +11,7 @@ public class ListNode {
 */
 
 class Solution {
-
-  public static boolean isPalindrome( ListNode head) {
-
-
-    return true;
-  }
-
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    }
 }
+
