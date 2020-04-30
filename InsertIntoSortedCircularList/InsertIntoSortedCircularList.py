@@ -1,7 +1,6 @@
 from crio.ds.List.ListNode import *
 from Solution import insertIntoSortedCircularList
 
-
 def isCircularList(head):
     if not head:
         return False
