@@ -1,7 +1,6 @@
 from Solution import *
 from crio.ds.List.ListNode import *
 
-
 def print_list(head):
     while head != None:
         print(head.val, end = " ")
@@ -13,11 +12,9 @@ def main():
    lst = [int(x) for x in lst]
    val = int(input().strip()) 
    lst = createList(lst)
-   
-   lsts = partition(lst, val)
 
-   for one_lst in lsts:
-      print_list(one_lst)
+   resultLst = partition(lst, val)
+   print_list(resultLst)
 
 if __name__ == '__main__':
     main()
