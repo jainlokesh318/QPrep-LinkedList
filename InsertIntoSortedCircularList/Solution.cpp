@@ -31,6 +31,10 @@ ListNode* insertIntoSortedCircularList(ListNode* head, int insertVal)
     while(!((insertVal >= head->val) && (insertVal <= temp->val)) && temp != toReturn)
     {
        // cout << head->val << " " << temp->val << "\n";
+
+        if(head->val > temp->val)
+            break;
+
         head = temp;
         temp = temp->next;
     }
