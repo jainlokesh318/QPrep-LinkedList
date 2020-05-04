@@ -15,4 +15,7 @@ public:
 */
 
 void deleteMiddleNode(ListNode* node) {
+    ListNode *newNode = node->next;
+    node->val = newNode->val;
+    node->next = newNode->next;
 }
