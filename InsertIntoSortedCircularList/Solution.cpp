@@ -14,7 +14,55 @@ public:
 };
 */
 
+ListNode* find_head(ListNode* random)
+{
+    if(random == NULL)
+        return NULL;
+
+    ListNode *var = random;
+    while(!(var->val > var->next->val || var->next == random))
+        var = var->next;
+
+    return var->next;
+}
+
 ListNode* insertIntoSortedCircularList(ListNode* head, int insertVal)
+{
+    ListNode *toReturn = head;
+
+    head = find_head(head);
+
+    ListNode *newNode = new ListNode();
+    newNode->val = insertVal;
+    newNode->next = NULL;
+
+    ListNode *current = head;
+    if(current == NULL)
+    {
+        newNode->next = newNode;
+        return newNode;
+    }
+
+    else if(current->val >= insertVal)
+    {
+        while(current->next != head)
+            current = current->next;
+        current->next = newNode;
+        newNode->next = head;
+    }
+
+    else{
+        while(current->next != head && current->next->val < newNode->val)
+            current = current->next;
+
+        newNode->next = current->next;
+        current->next = newNode;
+    }
+
+    return toReturn;
+}
+
+/*ListNode* insertIntoSortedCircularList(ListNode* head, int insertVal)
 {
 
     if(head == NULL)
@@ -45,4 +93,4 @@ ListNode* insertIntoSortedCircularList(ListNode* head, int insertVal)
         head->next = newNode;
 
     return toReturn;
-}
+}*/
