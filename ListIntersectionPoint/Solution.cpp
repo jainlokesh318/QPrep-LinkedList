@@ -15,4 +15,19 @@ public:
 };
 */
 ListNode* listIntersectionPoint(ListNode* head1, ListNode* head2) {
+     set<ListNode*> visited;
+
+    while(head1 != NULL)
+    {
+        visited.insert(head1);
+        head1 = head1->next;
+    }
+
+    while(head2 != NULL)
+    {
+        if(visited.find(head2) != visited.end())
+            return head2;
+        head2 = head2->next;
+    }
+    return NULL;
 }
