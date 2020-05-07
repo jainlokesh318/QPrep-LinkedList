@@ -13,6 +13,29 @@ public:
     }
 };
 */
-
+bool checkPallindrome(vector<int> v)
+{
+    int i = 0, j = v.size()-1;
+    while(i <= j)
+    {
+        if(v[i] != v[j])
+            return false;
+        i++;
+        j--;
+    }
+    return true;
+}
 bool isPalindrome(ListNode* head) {
+    if(head == NULL)
+        return false;
+    ListNode* temp = head;
+
+   vector<int> v;
+    while(temp != NULL)
+    {
+        v.push_back(temp->val);
+        temp = temp->next;
+    }
+
+    return checkPallindrome(v);
 }
