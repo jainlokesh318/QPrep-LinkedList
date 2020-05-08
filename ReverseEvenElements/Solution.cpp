@@ -18,7 +18,7 @@ ListNode* reverseEvenSublist(ListNode* prev, ListNode* curr)
 
     ListNode* nextNode; //to keep track of the next node to current
     ListNode* initial = curr; //Since this node will be tail after reversal which is to be pointed to the next sublist.
-    while(curr != NULL && curr->val%2 == 0)
+    while(curr != NULL && abs(curr->val)%2 == 0)
     {
         nextNode = curr->next;
         curr->next = prev;
@@ -37,7 +37,7 @@ ListNode * reverseEvenElements(ListNode *head , ListNode *prev) {
 
     while(curr != NULL)
     {
-        if((curr->val)%2 != 0 || curr->next == NULL || (curr->next->val)%2 == 1)
+        if(abs(curr->val)%2 != 0 || curr->next == NULL || abs(curr->next->val)%2 == 1)
         {
             prev = curr;
             curr = curr->next;
