@@ -30,5 +30,24 @@ public:
 */
 
 DoublyLinkedListNode* doublyLinkedCircularList(ListNode* head) {
+     if(head == NULL)
+        return NULL;
 
+    ListNode* temp = head->next;
+    DoublyLinkedListNode* cirHead = new DoublyLinkedListNode(head->val, NULL, NULL);
+    DoublyLinkedListNode* last = cirHead;
+
+    while(temp != NULL)
+    {
+
+        DoublyLinkedListNode* newNode = new DoublyLinkedListNode(temp->val, last, NULL);
+        last->next = newNode;
+        last = last->next;
+        temp = temp->next;
+    }
+
+    last->next = cirHead;
+    cirHead->prev = last;
+
+    return cirHead;
 }
